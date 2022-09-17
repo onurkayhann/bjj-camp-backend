@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const crypto = require('crypto');
-const uuidv1 = require('uuid/v1');
+const uuidv1 = require('uuidv1');
+const { ObjectId } = mongoose.Schema;
 
 const userSchema = new mongoose.Schema(
   {
@@ -14,7 +15,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       trim: true,
       required: true,
-      unique: true,
     },
     belt_color: {
       type: String,
@@ -23,6 +23,7 @@ const userSchema = new mongoose.Schema(
     hashed_password: {
       type: String,
       required: true,
+      unique: true,
     },
     about: {
       type: String,

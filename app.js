@@ -1,7 +1,7 @@
+const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
@@ -17,9 +17,9 @@ mongoose
   .then(() => console.log('DB connected'))
   .catch((err) => console.log('DB Error => ', err));
 
-// middlewarews
-app.use(morgan('dev'));
+// middlewares
 app.use(bodyParser.json());
+app.use(morgan('dev'));
 app.use(cookieParser());
 
 // routes middleware
