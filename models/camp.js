@@ -32,10 +32,6 @@ const campSchema = new mongoose.Schema(
       data: Buffer,
       contentType: String,
     },
-    destination: {
-      country: String,
-      city: String,
-    },
   },
   { timestamps: true }
 );
