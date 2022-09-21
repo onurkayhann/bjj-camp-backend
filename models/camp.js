@@ -32,6 +32,9 @@ const campSchema = new mongoose.Schema(
       data: Buffer,
       contentType: String,
     },
+    beltcolor: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
