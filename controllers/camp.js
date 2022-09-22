@@ -13,7 +13,27 @@ exports.create = (req, res) => {
         error: 'Image could not be uploaded',
       });
     }
+
+    // check for all fields
+    const { name, description, price, category, beltcolor, quantity } = fields;
+
+    if (
+      !name ||
+      !description ||
+      !price ||
+      !category ||
+      !beltcolor ||
+      !quantity
+    ) {
+      return res.status(400).json({
+        error: 'All fields are required',
+      });
+    }
+
     let camp = new Camp(fields);
+
+    // 1kb = 1000
+    // 1mb = 1000000
 
     if (files.photo) {
       console.log('FILES PHOTO: ', files.photo);
