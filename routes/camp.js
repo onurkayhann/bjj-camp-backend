@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const { create, campById, read } = require('../controllers/camp');
+const { create, campById, read, remove } = require('../controllers/camp');
 const { requireSignin, isAuth, isAdmin } = require('../controllers/auth');
 const { userById } = require('../controllers/user');
 
 router.get('/camp/:campId', read);
 router.post('/camp/create/:userId', requireSignin, isAuth, isAdmin, create);
+router.delete('/camp/:campId/:userId', requireSignin, isAuth, isAdmin, remove)
 
 router.param('userId', userById);
 router.param('campId', campById);

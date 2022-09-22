@@ -76,3 +76,17 @@ exports.create = (req, res) => {
     });
   });
 };
+
+exports.remove = (req, res) => {
+  let camp = req.camp;
+  camp.remove((err) => {
+    if (err) {
+      return res.status(400).json({
+        error: errorHandler(err),
+      });
+    }
+    res.json({
+      message: 'Camp is successfully deleted',
+    });
+  });
+};
