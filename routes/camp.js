@@ -8,6 +8,7 @@ const {
   remove,
   update,
   list,
+  listRelated,
 } = require('../controllers/camp');
 const { requireSignin, isAuth, isAdmin } = require('../controllers/auth');
 const { userById } = require('../controllers/user');
@@ -17,7 +18,8 @@ router.post('/camp/create/:userId', requireSignin, isAuth, isAdmin, create);
 router.delete('/camp/:campId/:userId', requireSignin, isAuth, isAdmin, remove);
 router.put('/camp/:campId/:userId', requireSignin, isAuth, isAdmin, update);
 
-router.get('/camps', list)
+router.get('/camps', list);
+router.get('/camps/related/:campId', listRelated);
 
 router.param('userId', userById);
 router.param('campId', campById);
