@@ -162,6 +162,27 @@ exports.list = (req, res) => {
           error: 'Camp not found',
         });
       }
-      res.send(camps);
+      res.json(camps);
+    });
+};
+
+/*
+  - it will find the camp based on the req camp category
+  - other camps that has the same category, will be returned
+*/
+
+exports.listRelated = (req, res) => {
+  let limit = req.query.limit ? parseInt(req.query.limit) : 6;
+
+  Camp.find({ _id: { $ne: req.camp }, category: req.camp.category })
+    .limit(limit)
+    .populate('category', '_id name')
+    .exec((err, camps) => {
+      if (err) {
+        return res.status(400).json({
+          error: 'Camps not found',
+        });
+      }
+      res.json(camps);
     });
 };
