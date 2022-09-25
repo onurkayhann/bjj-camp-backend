@@ -166,11 +166,6 @@ exports.list = (req, res) => {
     });
 };
 
-/*
-  - it will find the camp based on the req camp category
-  - other camps that has the same category, will be returned
-*/
-
 exports.listRelated = (req, res) => {
   let limit = req.query.limit ? parseInt(req.query.limit) : 6;
 
