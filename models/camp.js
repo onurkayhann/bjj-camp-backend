@@ -28,6 +28,10 @@ const campSchema = new mongoose.Schema(
     quantity: {
       type: Number,
     },
+    booked: {
+      type: Number,
+      default: 0,
+    },
     photo: {
       data: Buffer,
       contentType: String,
