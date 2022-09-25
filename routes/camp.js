@@ -11,6 +11,7 @@ const {
   listRelated,
   listCategories,
   listBySearch,
+  photo
 } = require('../controllers/camp');
 const { requireSignin, isAuth, isAdmin } = require('../controllers/auth');
 const { userById } = require('../controllers/user');
@@ -24,6 +25,7 @@ router.get('/camps', list);
 router.get('/camps/related/:campId', listRelated);
 router.get('/camps/categories', listCategories);
 router.post('/camps/by/search', listBySearch);
+router.get('/camp/photo/:campId', photo);
 
 router.param('userId', userById);
 router.param('campId', campById);

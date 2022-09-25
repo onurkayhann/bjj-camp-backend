@@ -246,3 +246,11 @@ exports.listBySearch = (req, res) => {
       });
     });
 };
+
+exports.photo = (req, res, next) => {
+  if (req.camp.photo.data) {
+    res.set('Content-Type', req.camp.photo.contentType);
+    return res.send(req.camp.photo.data);
+  }
+  next();
+};
