@@ -5,7 +5,9 @@ const Camp = require('../models/camp');
 const { errorHandler } = require('../helpers/dbErrorHandler');
 
 exports.campById = (req, res, next, id) => {
-  Camp.findById(id).exec((err, camp) => {
+  Camp.findById(id)
+  .populate('category')
+  .exec((err, camp) => {
     if (err || !camp) {
       return res.status(400).json({
         error: 'Camp not found',
@@ -243,17 +245,12 @@ exports.photo = (req, res, next) => {
 };
 
 exports.listSearch = (req, res) => {
-  // create query object to hold search value and category value
   const query = {};
-  // assign search value to query.name
   if (req.query.search) {
     query.name = { $regex: req.query.search, $options: 'i' };
-    // assign category value to query.category
     if (req.query.category && req.query.category != 'All') {
       query.category = req.query.category;
     }
-    // find the camp based on query object with 2 properties
-    // search and category
     Camp.find(query, (err, camps) => {
       if (err) {
         return res.status(400).json({
