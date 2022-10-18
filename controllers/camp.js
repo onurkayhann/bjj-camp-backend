@@ -6,16 +6,16 @@ const { errorHandler } = require('../helpers/dbErrorHandler');
 
 exports.campById = (req, res, next, id) => {
   Camp.findById(id)
-  .populate('category')
-  .exec((err, camp) => {
-    if (err || !camp) {
-      return res.status(400).json({
-        error: 'Camp not found',
-      });
-    }
-    req.camp = camp;
-    next();
-  });
+    .populate('category')
+    .exec((err, camp) => {
+      if (err || !camp) {
+        return res.status(400).json({
+          error: 'Camp not found',
+        });
+      }
+      req.camp = camp;
+      next();
+    });
 };
 
 // photo is set to undefined because it can cause loading problems
