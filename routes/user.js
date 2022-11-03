@@ -8,6 +8,7 @@ const {
   read,
   update,
   bookingHistory,
+  list
 } = require('../controllers/user');
 
 router.get('/secret/:userId', requireSignin, isAuth, isAdmin, (req, res) => {
@@ -15,6 +16,8 @@ router.get('/secret/:userId', requireSignin, isAuth, isAdmin, (req, res) => {
     user: req.profile,
   });
 });
+
+router.get('/users', list);
 
 router.get('/user/:userId', requireSignin, isAuth, read);
 router.put('/user/:userId', requireSignin, isAuth, update);
