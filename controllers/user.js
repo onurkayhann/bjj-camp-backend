@@ -96,3 +96,33 @@ exports.list = (req, res) => {
     res.json(users);
   });
 };
+
+// user DELETE
+
+// exports.remove = (req, res) => {
+//   const user = User.findById(req.params.userId);
+//   console.log(user);
+//   if (user) {
+//     user.remove();
+//     res.json({ message: 'User removed' });
+//   } else {
+//     res.status(404);
+//     throw new Error('User not found');
+//   }
+//   res.json(user);
+// };
+
+
+exports.remove = (req, res) => {
+  const user = User.findById(req.params.userId);
+  user.remove((err) => {
+    if (err) {
+      return res.status(400).json({
+        error: errorHandler(err),
+      });
+    }
+    res.json({
+      message: 'User is successfully deleted',
+    });
+  });
+};
