@@ -10,6 +10,7 @@ const {
   bookingHistory,
   list,
   remove,
+  adminUpdate,
 } = require('../controllers/user');
 
 router.get('/secret/:userId', requireSignin, isAuth, isAdmin, (req, res) => {
@@ -20,6 +21,7 @@ router.get('/secret/:userId', requireSignin, isAuth, isAdmin, (req, res) => {
 
 router.get('/users', list);
 router.delete('/user/:userId', remove);
+router.patch('/user/admin/:userId', requireSignin, adminUpdate);
 
 router.get('/user/:userId', requireSignin, isAuth, read);
 router.put('/user/:userId', requireSignin, isAuth, update);
