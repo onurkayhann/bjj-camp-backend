@@ -112,7 +112,6 @@ exports.list = (req, res) => {
 //   res.json(user);
 // };
 
-
 exports.remove = (req, res) => {
   const user = User.findById(req.params.userId);
   user.remove((err) => {
@@ -125,4 +124,27 @@ exports.remove = (req, res) => {
       message: 'User is successfully deleted',
     });
   });
+};
+
+exports.adminUpdate = async (req, res) => {
+  try {
+    const result = await User.findByIdAndUpdate(
+      { _id: req.profile.id },
+      req.body,
+      { new: true }
+    );
+    if (result) {
+      return res.status(200).json({
+        success: true,
+        message: 'User is successfully updated!',
+      });
+    }
+    await User.save();
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: `Server error ${error.message}`,
+      data: null,
+    });
+  }
 };
