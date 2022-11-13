@@ -64,10 +64,6 @@ Coming soon...
    ```
 4. Run
    ```sh
-   npm run data:import
-   ```
-5. Run
-   ```sh
    npm start
    ```
 
