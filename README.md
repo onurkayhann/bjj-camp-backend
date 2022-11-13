@@ -7,7 +7,7 @@
 <br />
 
 <h4>Project links</h4>
-<a href="#" target="_blank">Go to app</a> | <a href="https://github.com/onurkayhann/bjj-camp-frontend" target="_blank">Frontend Repo for the App</a> | <a href="https://github.com/onurkayhann/bjj-camp-backend" target="_blank">Backend Repo for the App</a> | <a href="https://www.figma.com/file/ptLf36k5QMRNGDQConA9AY/u09-fullstack-project?node-id=0%3A1" target="_blank">Figma work</a> | <a href="https://docs.google.com/document/d/1Xw3Oq3rEVeF-vSE9ItOklfLu34bz1IKPrZkm5GKRyr4/edit" target="_blank">Interviews</a> | <a href="https://docs.google.com/document/d/14vXOq5Yp2ya-JlO1_fkgj6u9mUudmgGWu6q3Rm2TWzY/edit" target="_blank">Backlog</a> | <a href='https://github.com/onurkayhann?tab=projects' target='_blank'>Sprints</a>
+<a href="https://bjj-training-camps-api.onrender.com/api/" target="_blank">Go to app</a> | <a href="https://github.com/onurkayhann/bjj-camp-frontend" target="_blank">Frontend Repo for the App</a> | <a href="https://github.com/onurkayhann/bjj-camp-backend" target="_blank">Backend Repo for the App</a> | <a href="https://www.figma.com/file/ptLf36k5QMRNGDQConA9AY/u09-fullstack-project?node-id=0%3A1" target="_blank">Figma work</a> | <a href="https://docs.google.com/document/d/1Xw3Oq3rEVeF-vSE9ItOklfLu34bz1IKPrZkm5GKRyr4/edit" target="_blank">Interviews</a> | <a href="https://docs.google.com/document/d/14vXOq5Yp2ya-JlO1_fkgj6u9mUudmgGWu6q3Rm2TWzY/edit" target="_blank">Backlog</a> | <a href='https://github.com/onurkayhann?tab=projects' target='_blank'>Sprints</a>
 
 ### Used languages to create this App
 
@@ -37,9 +37,9 @@
 | Logout: <br /> `/api/signout`                                     | GET     | Private |
 | Book camp: <br /> `/api/order/create/{userId}`                    | POST    | Private |
 
-### Deployment
+## Deployment
 
-Coming soon...
+Frontend is deployed with Netlify, and the backend is deployed using Render. I used Render's free plan, the only con is that it will spun down after 15 minutes of inactivity. But once a new request is received, Render will kick in again and start the process in approximately 30 seconds.
 
 ## How to get starting with the app
 
@@ -87,6 +87,10 @@ MIT license
 ## Thanks to providers
 
 I am super grateful that some people from the UX Designer program participated in my pre-work, and allowed me, to interview them. Thank you Victoria, Isabel, Neda, and Sandra.
+
+## About the Author
+
+My name is Onur, I am born and raised in Sweden, Stockholm. I am a code geek that always wants to learn about the coding, algorithms, and everything related to code. On my spare time I love reading books, learn Brazilian Jiu-Jitsu, travel, and explore different cultures.
 
 ## Get in touch with me
 
