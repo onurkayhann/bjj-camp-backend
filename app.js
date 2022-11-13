@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(expressValidator());
-app.use(cors({ origin: `http://localhost:${port}`, credentials: true }));
+app.use(cors({ origin: '*' }));
 
 // routes middleware
 app.use('/api', authRoutes);
