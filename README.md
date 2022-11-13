@@ -90,7 +90,7 @@ MIT license
 
 ## Thanks to providers
 
-I am super grateful that some people from the UX Designer program participated in my pre-work, and allowed me, to interview them. Thank you Victoria, Isabel, Neda, Rahim, and Sandra.
+I am super grateful that some people from the UX Designer program participated in my pre-work, and allowed me, to interview them. Thank you Victoria, Isabel, Neda, and Sandra.
 
 ## Get in touch with me
 
