@@ -80,6 +80,9 @@ Frontend is deployed with Netlify, and the backend is deployed using Render. I u
 
 <img src='./assets/sitemap-backend.png' alt='sitemap' />
 
+## Test
+I used Mocha, Mocha-Http, Chai, and Chai-Http to test some important routes on the backend. Everything is documentated and can be reached in the test map, on the backend.
+
 ## License
 
 MIT license
