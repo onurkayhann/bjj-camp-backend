@@ -29,7 +29,15 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(expressValidator());
-app.use(cors({ origin: '*' }));
+app.use(
+  cors({
+    credentials: true,
+    origin: [
+      'http://localhost:3000',
+      'https://bjj-training-camps.netlify.app/',
+    ],
+  })
+);
 
 // routes middleware
 app.use('/api', authRoutes);
