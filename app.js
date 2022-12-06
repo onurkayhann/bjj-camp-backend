@@ -31,7 +31,6 @@ app.use(cookieParser());
 app.use(expressValidator());
 app.use(
   cors({
-    credentials: true,
     origin: '*',
   })
 );
