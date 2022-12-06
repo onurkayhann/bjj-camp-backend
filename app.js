@@ -32,10 +32,7 @@ app.use(expressValidator());
 app.use(
   cors({
     credentials: true,
-    origin: [
-      'http://localhost:3000',
-      'https://bjj-training-camps.netlify.app/',
-    ],
+    origin: '*',
   })
 );
 
